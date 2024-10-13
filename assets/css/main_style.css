@@ -1,0 +1,218 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding:  0;
+    scroll-behavior: smooth;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #A0A4B8;
+}
+::-webkit-scrollbar-track{
+    background-color: white;
+}
+::-webkit-scrollbar-corner{
+    background-color: black;
+}
+body{
+    background-color: #4B4E6D;
+}
+main{
+    padding: 1rem;
+    max-width: 80rem;
+    width: 100%;
+    margin: 10rem auto;
+    text-align: center;
+}
+    main h1{
+        margin-block-end: 10rem;
+    }
+    main section{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+    }
+    main section p{
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+    main section form{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+    main section form input[type=text]{
+        padding-block: 0.2rem;
+        font-size: 1.2rem;   
+    }
+    main section form input[type=submit]{
+        width: 5rem;
+        padding-block: 0.2rem;
+        align-self: flex-end;
+        margin-block-start: 1rem;
+        background-color: #A0A4B8;
+        color: #212227;
+        border: none;
+        cursor: pointer;
+        display: inline-block;
+    }
+    main section form input[type=submit]:hover{
+        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        color: white;
+    }
+    main section form input[type=text]:focus{
+        outline: 1px solid #212227;
+    }
+    main section form label{
+        color: #D8DDEF;
+        margin-block-start: 0.2rem;
+        position: absolute;
+        bottom: 0;
+    }
+#tags{
+    margin-inline-end: 1rem;
+    width: 100%;
+    overflow: auto;
+}
+    #tags table, #response section{
+        width: 100%;
+        margin-block-start: 2rem;
+    }
+    #tags table td,th{
+        border: 1px solid #212227;
+        border-collapse: collapse;
+        color: #A0A4B8;
+        text-align: center;
+    }
+    #tags table tr:nth-child(even){
+        background-color: #212227;
+    }
+#response{
+    width: 100%;
+    vertical-align: top;
+}
+    #response section{
+        background-color: #212227;
+        color: #A0A4B8;
+        max-width: 100%;
+        height: 92%;
+        overflow: auto;
+    }
+        #response section pre{
+            font-size: 1rem;
+            white-space: pre-wrap;
+        }
+#tags,#response{
+    max-width: 30rem;
+    display: inline-block;
+    margin-block-start: 3rem;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
+    height: 50rem;
+}
+#tags h2, #response h2{
+    padding-inline: 1rem;
+}
+#modal{
+    display: none;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    outline: 1px solid black;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+    #modal-content{
+        max-width: 30rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        align-items: center;
+        text-align: center;
+        background-color: #4B4E6D;
+    }
+    #modal-content h1{
+        padding: 1rem;
+        font-size: 2vh;
+        color: #A0A4B8;
+    }
+    #modal-content section{
+        height: 15vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .cube{
+        padding: 0.7rem;
+        outline: 1px solid black;
+        margin-inline: 0.2rem;
+        border-radius: 50%;
+        background-color: #212227;
+        box-shadow: 0 0 10px rgba(0, 0, 0,1),0 0 8px rgba(0, 0, 0,0.5) inset;
+        animation: color 800ms infinite ease-in-out alternate;
+    }
+    .cube:nth-child(1){
+        animation-delay: 0.1s;
+    }
+    .cube:nth-child(2){
+        animation-delay: 0.2s;
+    }
+    .cube:nth-child(3){
+        animation-delay: 0.3s;
+    }
+    .cube:nth-child(4){
+        animation-delay: 0.4s;
+    }
+    @keyframes color {
+       100% {transform: translateY(-1rem) scale(1.1);
+            background-color: #A0A4B8;}
+    }
+    .pop{
+        width: 0;
+        position: fixed;
+        top: 0;
+        right: 0;
+        text-align: center;
+        color: green;
+        background-color: white;
+        margin-block: 1rem;
+        margin-inline: 1rem;
+        border-radius: 5px;
+        overflow: hidden;
+        white-space: nowrap;
+        animation: popups 800ms ease-in-out 1 forwards; 
+    }
+    .pop p{
+        font-size: 1.5vh;
+        font-weight: bold;
+    }
+    @keyframes popups {
+        100% {width: 15rem; padding: 1rem}
+    }
+    @keyframes popup {
+        100% { width: 0%; padding: 0%; display: none;}
+    }
+main h1,main section p,#tags h2,#response h2{
+    color: #D8DDEF;
+}
+button{
+    position: sticky;
+    padding-inline: 1rem;
+    padding-block: 0.2rem;
+    text-align: right;
+    top: 0;
+    border: none;
+    background-color: transparent;
+    color: #D8DDEF;
+    cursor: pointer;
+}
+button:hover{
+    color: wheat;
+}
