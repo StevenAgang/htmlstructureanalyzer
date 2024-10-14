@@ -3,7 +3,7 @@
         <h1>HTML STRUCTURE ANALYZER</h1>
         <section>
             <p>URL to fetch</p>
-            <form action="" method="get">
+            <form action="<?=base_url('Mains/analyzer');?>" method="get">
                 <input type="hidden" name="<?=$csrf['name']?>" value="<?=$csrf['hash']?>">
                 <input type="text" name="url" placeholder="enter a url">
                 <label>
