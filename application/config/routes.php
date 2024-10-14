@@ -51,5 +51,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'mains';
 $route['analyzer'] = 'mains/analyzer';
+$route['parser'] = 'mains/html_parser';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

@@ -42,7 +42,7 @@ class Mains extends CI_Controller {
 		if($this->input->get('verification')){
 			curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, FALSE);
 		}else{
-			curl_setopt($curl,CURLOPT_CAINFO, 'C://Users/StevenAgang/Downloads/cacert.pem');
+			curl_setopt($curl,CURLOPT_CAINFO, TRUE);
 		}
 		curl_setopt($curl,CURLOPT_CONNECTTIMEOUT,30);
 
