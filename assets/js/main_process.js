@@ -14,7 +14,7 @@ $(document).ready(function(){
                 return false;
             }else{
                 $('#modal').css('display','flex');
-                $.get('mains/analyzer',$(this).serialize(),function(res){
+                $.get('Mains/analyzer',$(this).serialize(),function(res){
                     if(res.status === true){
                         $('#tags').html(res.tags);
                         $('#response pre').text('');
