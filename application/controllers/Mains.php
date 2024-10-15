@@ -32,9 +32,9 @@ class Mains extends CI_Controller {
 		return $view_data;
 	}
 	public function analyzer(): void{
-		header("Access-Control-Allow-Origin: *");
-		header("Access-Control-Allow-Methods: GET, POST");
-		header("Access-Control-Allow-Headers: Content-Type, Authorization");
+		// header("Access-Control-Allow-Origin: *");
+		// header("Access-Control-Allow-Methods: GET, POST");
+		// header("Access-Control-Allow-Headers: Content-Type, Authorization");
 		echo 'working';
 		// $url = $this->input->get('url',true);
 		// $header = [
