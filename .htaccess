@@ -7,7 +7,8 @@
     #Removes access to the resources folder, etc. by users.
     #Additionally, this will allow you to hide index.php in the url.
     RewriteCond $1 !^(index.php|resources|robots.txt)
-
+    RewriteCond %{REQUEST_URI} ^/index\.php
+    RewriteRule ^index\.php(.*)$ /$1 [L,R=304]
     #Checks to see if the user is attempting to access a valid file,
     #such as an image or css document, if this isn't true it sends the
     #request to index.php
