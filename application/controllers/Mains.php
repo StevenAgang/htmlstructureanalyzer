@@ -32,43 +32,44 @@ class Mains extends CI_Controller {
 		return $view_data;
 	}
 	public function analyzer(): void{
-		$url = $this->input->get('url',true);
-		$header = [
-			'Content-Type: application/json'
-		];
-		$curl = curl_init($url);
-		curl_setopt($curl,CURLOPT_RETURNTRANSFER,TRUE);
-		curl_setopt($curl,CURLOPT_HTTPHEADER,$header);
-		if($this->input->get('verification')){
-			curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, FALSE);
-		}else{
-			curl_setopt($curl,CURLOPT_CAINFO, TRUE);
-		}
-		curl_setopt($curl,CURLOPT_CONNECTTIMEOUT,30);
+		echo 'working';
+		// $url = $this->input->get('url',true);
+		// $header = [
+		// 	'Content-Type: application/json'
+		// ];
+		// $curl = curl_init($url);
+		// curl_setopt($curl,CURLOPT_RETURNTRANSFER,TRUE);
+		// curl_setopt($curl,CURLOPT_HTTPHEADER,$header);
+		// if($this->input->get('verification')){
+		// 	curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, FALSE);
+		// }else{
+		// 	curl_setopt($curl,CURLOPT_CAINFO, TRUE);
+		// }
+		// curl_setopt($curl,CURLOPT_CONNECTTIMEOUT,30);
 
-		$response = curl_exec($curl);
-		if(curl_errno($curl)){
-			$view_data = array(
-				'status' => false,
-				'error' => curl_errno($curl)
-			);
-		}
-		curl_close($curl);
-		if($response == false){
-			$view_data = array(
-				'status' => false,
-				'error' => 'SSL verification failed, try to disable SSL verification'
-			);
-		}else{
-			$response = $this->html_parser($response);
-			$view_data = array(
-				'status' => true,
-				'string' => $response['parse'],
-				'tags' => $this->load->view('partials/tag.php',$response,true)
-			);
-		} 
-		header('Content-Type: application/json');
-		echo json_encode($view_data);
+		// $response = curl_exec($curl);
+		// if(curl_errno($curl)){
+		// 	$view_data = array(
+		// 		'status' => false,
+		// 		'error' => curl_errno($curl)
+		// 	);
+		// }
+		// curl_close($curl);
+		// if($response == false){
+		// 	$view_data = array(
+		// 		'status' => false,
+		// 		'error' => 'SSL verification failed, try to disable SSL verification'
+		// 	);
+		// }else{
+		// 	$response = $this->html_parser($response);
+		// 	$view_data = array(
+		// 		'status' => true,
+		// 		'string' => $response['parse'],
+		// 		'tags' => $this->load->view('partials/tag.php',$response,true)
+		// 	);
+		// } 
+		// header('Content-Type: application/json');
+		// echo json_encode($view_data);
 	
 	}
 	public function html_parser($response): array{
